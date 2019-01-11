@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Card from './Card';
 // import users from '../data/users';
 
@@ -15,20 +16,16 @@ class App extends React.Component {
 	componentDidMount() {
 		console.log("App - componentDidMount");
 
-		fetch('/api/users')
-			.then(response => {
-				console.log(response.headers.get('Content-Type')); // application/json; charset=utf-8
-				console.log(response.status); // 200
-				return response.json();
-			})
-			.then(users => {
-				// console.log(users);
+		axios.get('/api/users')
+			.then(resp => {
+				// console.log(resp);
+				// console.log(resp.data);
 				this.setState({
-					data: users,
-					keys: Object.keys(users),
+					data: resp.data,
+					keys: Object.keys(resp.data),
 				});
 			})
-			.catch( alert );
+			.catch(console.error);
 
 		// this.setState({
 		// 	data: users,
