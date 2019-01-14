@@ -1,7 +1,5 @@
 import React from 'react';
-import axios from 'axios';
 import Card from './Card';
-// import users from '../data/users';
 
 
 // $r.setState({ keys: $r.state.keys.slice(1) }) - in chrome console
@@ -17,25 +15,6 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("App - componentDidMount");
-
-		axios.get('/api/users')
-			.then(resp => {
-				// console.log(resp);
-				// console.log(resp.data);
-				this.setState({
-					data: resp.data,
-					keys: Object.keys(resp.data),
-				});
-			})
-			.catch(console.error);
-
-		// this.setState({
-		// 	data: users,
-		// 	keys: Object.keys(users),
-		// });
-
-		// debugger;
 	}
 
 	// {console.log(this.state.data)}

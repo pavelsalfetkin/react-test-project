@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { hydrate } from "react-dom"
 import App from './components/App';
 
 
 ReactDOM.hydrate(
-	<App initialContests={[]} />,
+	<App initialContests={window.initialData} />,
 	document.getElementById('root')
 );
-
 
 
 // ReactDOM.render(

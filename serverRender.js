@@ -11,9 +11,10 @@ const serverRender = () =>
   axios.get(`${config.serverUrl}/api/users`)
     .then(resp => {
       // console.log(resp.data);
-      return ReactDOMServer.renderToString(
-        <App initialContests={resp.data}/>
-      );
+      return {
+        initialMarkup: ReactDOMServer.renderToString(<App initialContests={resp.data}/>),
+        initialData: resp.data
+      }
     })
 
 export default serverRender;
