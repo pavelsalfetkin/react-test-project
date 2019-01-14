@@ -1,6 +1,6 @@
 import config from './config';
 import apiRouter from './api';
-import './serverRender';
+import serverRender from './serverRender';
 
 import express from 'express';
 const server = express();
@@ -8,13 +8,16 @@ const server = express();
 server.set('view engine', 'ejs');
 
 server.get('/', (req, res) => {
-  res.render('index', {
-    content: 'Hello <b>EJS</b>'
-  });
+  serverRender()
+    .then(content => {
+      res.render('index', {
+        content
+      });
+    })
+    .catch(console.error)
 });
 
 server.use('/api', apiRouter);
-
 server.use(express.static('public'));
 
 server.listen(config.port, config.host, () => {

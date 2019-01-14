@@ -4,12 +4,15 @@ import Card from './Card';
 // import users from '../data/users';
 
 
+// $r.setState({ keys: $r.state.keys.slice(1) }) - in chrome console
+
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: [],
-			keys: []
+			data: this.props.initialContests,
+			keys: Object.keys(this.props.initialContests)
 		}
 	}
 
@@ -33,14 +36,14 @@ class App extends React.Component {
 		// });
 
 		// debugger;
-		// $r.setState({ keys: $r.state.keys.slice(1) }) - in chrome console
 	}
+
+	// {console.log(this.state.data)}
+	// {console.log(this.state.keys)}
 
 	render() {
 		return (
 			<div id="container">
-				{console.log(this.state.data)}
-				{console.log(this.state.keys)}
 				{this.state.keys.map(key => <Card key={this.state.data[key].id} user={this.state.data[key]} updateTime={2000}/> )}
 			</div>
 		);

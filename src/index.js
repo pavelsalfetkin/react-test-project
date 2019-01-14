@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { hydrate } from "react-dom"
 import App from './components/App';
 
 
-ReactDOM.render(
-	<App />,
+ReactDOM.hydrate(
+	<App initialContests={[]} />,
 	document.getElementById('root')
 );
+
+
+
+// ReactDOM.render(
+// 	<App initialContests={[]} />,
+// 	document.getElementById('root')
+// );
 
 // setTimeout(()=>{
 // 	ReactDOM.render(
