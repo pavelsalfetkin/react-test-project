@@ -12,12 +12,18 @@ class CardList extends React.Component {
 	}
 
 	componentDidMount() {
+		// console.log(this.props.onContestClick);
 	}
 
 	render() {
 		return (
 			<div id="container">
-				{this.state.keys.map(key => <Card key={this.state.data[key].id} user={this.state.data[key]} updateTime={2000}/> )}
+				{this.state.keys.map(key =>
+					<Card
+						onClick={this.props.onCardClick}
+						key={this.state.data[key].id}
+						user={this.state.data[key]}
+						updateTime={2000}/> )}
 			</div>
 		);
 	}

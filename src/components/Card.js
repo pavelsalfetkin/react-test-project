@@ -25,7 +25,7 @@ class Card extends React.Component {
 	}
 
 	handleClick() {
-		console.log(this.props.user.name);
+		this.props.onClick(this.props.user.id);
 	}
 
 	render() {
