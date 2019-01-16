@@ -5,6 +5,7 @@ class Card extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { date: 0 };
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	updateDate() {
@@ -12,7 +13,6 @@ class Card extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("Card - componentDidMount");
 		this.setState({ date: new Date().toLocaleTimeString() });
 		this.upDate = setInterval( () => this.updateDate(), this.props.updateTime );
 		// debugger;
@@ -24,9 +24,13 @@ class Card extends React.Component {
 		// debugger;
 	}
 
+	handleClick() {
+		console.log(this.props.user.name);
+	}
+
 	render() {
 		return (
-			<div className="card">
+			<div className="card" onClick={ this.handleClick }>
 				<div className="name-block">
 					<div className="avatar"><div className="image"></div></div>
 					<div className="name"><span>{this.props.user.name}</span></div>
@@ -40,5 +44,6 @@ class Card extends React.Component {
 		);
 	}
 }
+
 
 export default Card;
