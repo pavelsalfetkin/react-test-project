@@ -4,19 +4,6 @@ import App from './components/App';
 
 
 ReactDOM.hydrate(
-	<App initialContests={window.initialData} />,
+	<App indexData={window.indexData} />,
 	document.getElementById('root')
 );
-
-
-// ReactDOM.render(
-// 	<App initialContests={[]} />,
-// 	document.getElementById('root')
-// );
-
-// setTimeout(()=>{
-// 	ReactDOM.render(
-// 		<h1>Components Will Unmount</h1>,
-// 		document.getElementById('root')
-// 	);
-// }, 8000);

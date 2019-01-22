@@ -1,34 +1,34 @@
 {
   "user1": {
-    "id": "1",
+    "id": "user1",
     "avatar": "#",
     "name": "Pavel Salfetkin",
     "about": "About",
     "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis laboriosam tempora hic? Error ex accusamus dignissimos, fugiat consequuntur rem est iste perspiciatis perferendis debitis vero, ad similique eaque pariatur atque?"
   },
   "user2": {
-    "id": "2",
+    "id": "user2",
     "avatar": "#",
     "name": "Natali Borisova",
     "about": "About",
     "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis laboriosam tempora hic? Error ex accusamus dignissimos, fugiat consequuntur rem est iste perspiciatis perferendis debitis vero, ad similique eaque pariatur atque?"
   },
   "user3": {
-    "id": "3",
+    "id": "user3",
     "avatar": "#",
     "name": "Walter White",
     "about": "About",
     "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis laboriosam tempora hic? Error ex accusamus dignissimos, fugiat consequuntur rem est iste perspiciatis perferendis debitis vero, ad similique eaque pariatur atque?"
   },
   "user4": {
-    "id": "4",
+    "id": "user4",
     "avatar": "#",
     "name": "Jesy Pinkman",
     "about": "About",
     "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis laboriosam tempora hic? Error ex accusamus dignissimos, fugiat consequuntur rem est iste perspiciatis perferendis debitis vero, ad similique eaque pariatur atque?"
   },
   "user5": {
-    "id": "5",
+    "id": "user5",
     "avatar": "#",
     "name": "Gustavo",
     "about": "About",

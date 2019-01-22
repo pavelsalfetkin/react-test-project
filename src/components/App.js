@@ -6,16 +6,29 @@ const pushState = (obj, url) => {
 	window.history.pushState(obj, '', url);
 }
 
-class App extends React.Component {
 
-	fetchCard(id) {
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			data: this.props.indexData
+		}
+		this.onCardClick = this.onCardClick.bind(this);
+	}
+
+	componentDidMount() {
+
+	}
+
+	onCardClick(id) {
 		console.log("fetchCard", id);
-		pushState({ currentId: id }, `/card/${id}`)
+		pushState({ currentId: id }, `/card/${id}`);
+		this.setState({ data: { [id]: this.state.data[id] } });
 	}
 
 	render() {
 		return (
-			<CardList data={this.props} onCardClick={this.fetchCard} />
+			<CardList data={this.state.data} onCardClick={this.onCardClick} />
 		);
 	}
 }

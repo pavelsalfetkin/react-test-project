@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-
-import App from './src/components/App';
-
 import config from './config';
 import axios from 'axios';
+import App from './src/components/App';
 
 
 const serverRender = () =>
@@ -12,8 +10,8 @@ const serverRender = () =>
     .then(resp => {
       // console.log(resp.data);
       return {
-        initialMarkup: ReactDOMServer.renderToString(<App initialContests={resp.data}/>),
-        initialData: resp.data
+        indexContent: ReactDOMServer.renderToString(<App indexData={resp.data}/>),
+        indexData: resp.data
       }
     })
 

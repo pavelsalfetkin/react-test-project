@@ -1,24 +1,27 @@
 import config from './config';
-import apiRouter from './api';
+import apiIndexRouter from './api';
 import serverRender from './serverRender';
-
 import express from 'express';
+
 const server = express();
 
 server.set('view engine', 'ejs');
 
+// request - HTTP запрос
+// response - HTTP ответ
+
 server.get('/', (req, res) => {
   serverRender()
-    .then(({initialMarkup, initialData}) => {
+    .then(({indexContent, indexData}) => {
       res.render('index', {
-        initialMarkup,
-        initialData
+        indexContent,
+        indexData
       });
     })
     .catch(console.error)
 });
 
-server.use('/api', apiRouter);
+server.use('/api', apiIndexRouter);
 server.use(express.static('public'));
 
 server.listen(config.port, config.host, () => {

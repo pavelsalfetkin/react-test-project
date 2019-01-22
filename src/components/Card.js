@@ -5,7 +5,7 @@ class Card extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { date: 0 };
-		this.handleClick = this.handleClick.bind(this);
+		this.onCardClick = this.onCardClick.bind(this);
 	}
 
 	updateDate() {
@@ -14,7 +14,7 @@ class Card extends React.Component {
 
 	componentDidMount() {
 		this.setState({ date: new Date().toLocaleTimeString() });
-		this.upDate = setInterval( () => this.updateDate(), this.props.updateTime );
+		// this.upDate = setInterval( () => this.updateDate(), this.props.updateTime );
 		// debugger;
 	}
 
@@ -24,13 +24,13 @@ class Card extends React.Component {
 		// debugger;
 	}
 
-	handleClick() {
-		this.props.onClick(this.props.user.id);
+	onCardClick() {
+		this.props.onCardClick(this.props.user.id);
 	}
 
 	render() {
 		return (
-			<div className="card" onClick={ this.handleClick }>
+			<div className="card" onClick={ this.onCardClick }>
 				<div className="name-block">
 					<div className="avatar"><div className="image"></div></div>
 					<div className="name"><span>{this.props.user.name}</span></div>

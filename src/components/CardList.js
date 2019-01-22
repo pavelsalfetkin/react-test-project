@@ -3,26 +3,26 @@ import Card from './Card';
 
 
 class CardList extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			data: this.props.data.initialContests,
-			keys: Object.keys(this.props.data.initialContests)
-		}
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		data: this.props.data,
+	// 		keys: Object.keys(this.props.data)
+	// 	}
+	// }
 
 	componentDidMount() {
-		// console.log(this.props.onContestClick);
+
 	}
 
 	render() {
 		return (
 			<div id="container">
-				{this.state.keys.map(key =>
+				{Object.keys(this.props.data).map(key =>
 					<Card
-						onClick={this.props.onCardClick}
-						key={this.state.data[key].id}
-						user={this.state.data[key]}
+						onCardClick={this.props.onCardClick}
+						key={this.props.data[key].id}
+						user={this.props.data[key]}
 						updateTime={2000}/> )}
 			</div>
 		);
