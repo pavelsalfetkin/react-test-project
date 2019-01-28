@@ -1,5 +1,6 @@
 import React from 'react';
 import CardList from './CardList';
+import * as api from '../api';
 
 
 const pushState = (obj, url) => {
@@ -17,13 +18,19 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-
+		console.log("this.state", this.state.data);
 	}
 
 	onCardClick(id) {
-		console.log("fetchCard", id);
+		console.log("id", id);
 		pushState({ currentId: id }, `/card/${id}`);
-		this.setState({ data: { [id]: this.state.data[id] } });
+		api.apiDataId(id)
+			.then(dataId => {
+				console.log("api.apiDataId(id)", dataId);
+				console.log("this.setState", { data: { [id]: dataId } });
+				this.setState({ data: { [id]: dataId } });
+				console.log("this.state", this.state.data);
+			})
 	}
 
 	render() {

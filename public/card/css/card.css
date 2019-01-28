@@ -1,0 +1,121 @@
+.card {
+	display: block;
+	position: relative;
+	width: 360px;
+  min-height: 300px;
+  background-color: green;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.name-block {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+  background-color: #F0EAD6;
+  border-bottom: 1px solid rgba(210, 194, 157, 1);
+}
+
+.avatar {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+}
+
+.avatar .image{
+	position: relative;
+	width: 56px;
+  height: 56px;
+  background-color: #252628;
+  border-radius: 50%;
+}
+
+.name {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+	flex-grow: 1;
+	min-width: 100px;
+	height: 100px;
+}
+
+.name span {
+  /* margin-left: 24px; */
+	font-family: 'Gotham Pro', sans-serif;
+	font-weight: normal;
+	color: #252628;
+	font-size: 32px;
+	line-height: 36px;
+}
+
+.about-block {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 64px;
+  background-color: #F0EAD6;
+  border-bottom: 1px solid rgba(210, 194, 157, 1);
+}
+
+.about {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+	width: 50%;
+	height: 100px;
+}
+
+.about span {
+  margin-left: 24px;
+	font-family: 'Gotham Pro', sans-serif;
+	font-weight: normal;
+	color: #252628;
+	font-size: 24px;
+}
+
+.date {
+	display: flex;
+	position: relative;
+	justify-content: flex-end;
+	align-items: center;
+	flex-grow: 1;
+	min-width: 100px;
+	height: 100px;
+}
+
+.date span {
+  margin-right: 24px;
+  font-family: 'Gotham Pro', sans-serif;
+	font-weight: normal;
+	color: rgba(210, 194, 157, 1);
+	font-size: 16px;
+}
+
+.text {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	/* height: 200px; */
+	background-color: #F0EAD6;
+}
+
+.text span {
+  margin: 24px;
+  font-family: 'Gotham Pro', sans-serif;
+	font-weight: normal;
+  color: #252628;
+  line-height: 21px;
+	font-size: 14px;
+}
