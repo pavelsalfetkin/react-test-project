@@ -7,6 +7,9 @@ const pushState = (obj, url) => {
 	window.history.pushState(obj, '', url);
 }
 
+const onPopState = (handler) => {
+	window.onpopstate = handler;
+}
 
 class App extends React.Component {
 	constructor(props) {
@@ -19,32 +22,39 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		// console.log("this.state", this.state.data);
-		// console.log("this.props.indexData", this.props.indexData);
+		onPopState((e) => {
+			// console.log(e.state.currentId);
+			this.getApiDataId(e.state.currentId);
+		});
+	}
+
+	getApiDataId(id) {
+		if (id) {
+			// console.log("if", id);
+			api.apiDataId(id)
+			.then(dataId => {
+				this.setState({ data: { [id]: dataId } });
+			})
+		}
+		else if (!id) {
+			// console.log("else if(null)", id);
+			api.apiDataList()
+			.then(dataList => {
+				this.setState({ data: dataList });
+			})
+		}
 	}
 
 	onCardClick(id) {
-		console.log("id", id);
+		// console.log("id", id);
 		pushState({ currentId: id }, `/card/${id}`);
-		api.apiDataId(id)
-			.then(dataId => {
-				// console.log("api.apiDataId(id)", dataId);
-				// console.log("this.setState", { data: { [id]: dataId } });
-				this.setState({ data: { [id]: dataId } });
-				// console.log("this.state", this.state.data);
-			})
+		this.getApiDataId(id);
 	}
 
 	onBackClick() {
-		console.log("App - onBackClick");
+		// console.log("App - onBackClick");
 		pushState({ currentId: null }, `/`);
-		api.apiDataList()
-			.then(dataList => {
-				// console.log("api.apiDataList", dataList);
-				// console.log("this.setState", { data: { [id]: dataId } });
-				this.setState({ data: dataList });
-				// console.log("this.state", this.state.data);
-			})
+		this.getApiDataId();
 	}
 
 	render() {

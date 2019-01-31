@@ -8,10 +8,7 @@ const apiDataId = (id) => {
 
 const apiDataList = () => {
   return axios.get(`/api/users`)
-    .then(resp => {
-      // console.log(resp.data);
-      return resp.data
-    });
+    .then(resp => resp.data);
 };
 
 export { apiDataId, apiDataList };

@@ -20,7 +20,7 @@ class Card extends React.Component {
 	}
 
 	componentWillUnmount() {
-		console.log("Card - componentWillUnmount");
+		// console.log("Card - componentWillUnmount");
 		clearInterval(this.upDate);
 		// debugger;
 	}
@@ -31,7 +31,7 @@ class Card extends React.Component {
 
 	onBackClick(e) {
 		e.stopPropagation();
-		console.log("Card - onBackClick");
+		// console.log("Card - onBackClick");
 		this.props.onBackClick();
 	}
 
