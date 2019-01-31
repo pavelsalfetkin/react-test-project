@@ -6,4 +6,12 @@ const apiDataId = (id) => {
     .then(resp => resp.data);
 };
 
-export { apiDataId };
+const apiDataList = () => {
+  return axios.get(`/api/users`)
+    .then(resp => {
+      // console.log(resp.data);
+      return resp.data
+    });
+};
+
+export { apiDataId, apiDataList };

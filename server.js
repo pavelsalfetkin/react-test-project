@@ -5,8 +5,6 @@ import express from 'express';
 
 const server = express();
 
-const path = ['/', '/card/:id'];
-
 // Назначает имя настройки для значения
 // С этими настройками express по умолчанию смотрит в папку /views и ищет там файлы *.ejs
 server.set('view engine', 'ejs');
@@ -15,12 +13,12 @@ server.set('view engine', 'ejs');
 // Направляет HTTP-запросы GET на указанный путь с указанными функциями обратного вызова
 // request - объект запроса
 // response - объект ответа
-server.get(path, (req, res) => {
+server.get(['/', '/card/:id'], (req, res) => {
   // console.log(req.params.id); // user1
   serverRender(req.params.id)
     .then(({indexContent, indexData}) => {
-      console.log("indexContent - ", indexContent);
-      console.log("indexData - ", indexData);
+      // console.log("indexContent - ", indexContent);
+      // console.log("indexData - ", indexData);
       // Returns the rendered HTML of a view via the callback function
       res.render('index', {
         indexContent,

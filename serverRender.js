@@ -34,14 +34,4 @@ const serverRender = (id) =>
       }
     })
 
-// const serverRender = () =>
-//   axios.get(`${config.serverUrl}/api/users`)
-//     .then(resp => {
-//       // console.log(resp.data);
-//       return {
-//         indexContent: ReactDOMServer.renderToString(<App indexData={resp.data}/>),
-//         indexData: resp.data
-//       }
-//     })
-
 export default serverRender;

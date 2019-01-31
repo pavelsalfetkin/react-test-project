@@ -21,6 +21,7 @@ class CardList extends React.Component {
 				{Object.keys(this.props.data).map(key =>
 					<Card
 						onCardClick={this.props.onCardClick}
+						onBackClick={this.props.onBackClick}
 						key={this.props.data[key].id}
 						user={this.props.data[key]}
 						updateTime={2000}/> )}

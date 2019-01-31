@@ -97,7 +97,7 @@
   margin-right: 24px;
   font-family: 'Gotham Pro', sans-serif;
 	font-weight: normal;
-	color: rgba(210, 194, 157, 1);
+	color: #ba9f45;
 	font-size: 16px;
 }
 
@@ -118,4 +118,24 @@
   color: #252628;
   line-height: 21px;
 	font-size: 14px;
+}
+
+.back {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	border-top: 1px solid rgba(210, 194, 157, 1);
+	background-color: #F0EAD6;
+}
+
+.back span {
+  margin: 8px 24px;
+  font-family: 'Gotham Pro', sans-serif;
+	font-weight: normal;
+  color: #ba9f45;
+  line-height: 21px;
+	font-size: 14px;
+	cursor: pointer;
 }

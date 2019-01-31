@@ -6,6 +6,7 @@ class Card extends React.Component {
 		super(props);
 		this.state = { date: 0 };
 		this.onCardClick = this.onCardClick.bind(this);
+		this.onBackClick = this.onBackClick.bind(this);
 	}
 
 	updateDate() {
@@ -28,9 +29,15 @@ class Card extends React.Component {
 		this.props.onCardClick(this.props.user.id);
 	}
 
+	onBackClick(e) {
+		e.stopPropagation();
+		console.log("Card - onBackClick");
+		this.props.onBackClick();
+	}
+
 	render() {
 		return (
-			<div className="card" onClick={ this.onCardClick }>
+			<div className="card" onClick={this.onCardClick}>
 				<div className="name-block">
 					<div className="avatar"><div className="image"></div></div>
 					<div className="name"><span>{this.props.user.name}</span></div>
@@ -40,6 +47,7 @@ class Card extends React.Component {
 					<div className="date"><span>{this.state.date}</span></div>
 				</div>
 				<div className="text"><span>{this.props.user.text}</span></div>
+				<div className="back"><span onClick={this.onBackClick}>Back</span></div>
 			</div>
 		);
 	}
