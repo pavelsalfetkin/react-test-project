@@ -28,6 +28,10 @@ class App extends React.Component {
 		});
 	}
 
+	componentWillUnmount() {
+		onPopState(null);
+	}
+
 	getApiDataId(id) {
 		if (id) {
 			// console.log("if", id);
